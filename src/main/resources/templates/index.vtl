@@ -1,0 +1,17 @@
+<!--index.vtl-->
+<h1>Teams:</h1>
+
+#if ($teams)
+  <ul>
+    #foreach ($team in $teams)
+      <li><a href="/teams/$team.getId()">$team.getTeamName()</a></li>
+    #end
+  </ul>
+#else
+  <p>No teams have Registered at this time</p>
+#end
+
+
+
+<a href="/teams/new">Add a New Team</a>
+<!--index.vtl-->
