@@ -6,6 +6,6 @@ public class MemberTest {
   @Test
   public void Member_instantiatesCorrectly_true() {
     Member newMember = new Member("James");
-    asserTrue(newMember instanceof Member);
+    assertEquals(true, newMember instanceof Member);
   }
 }
