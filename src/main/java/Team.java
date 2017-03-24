@@ -17,4 +17,8 @@ public class Team {
   public static List<Team> all() {
     return teams;
   }
+
+  public static void clear() {
+    teams.clear();
+  }
 }
