@@ -29,4 +29,18 @@ public class MemberTest {
     Member.clear();
     assertEquals(0, Member.all().size());
   }
+
+  @Test
+  public void getId_MemberInstantiatesWithAnID_1() {
+    Member.clear();
+    Member newMember = new Member("James");
+    assertEquals(1, newMember.getId());
+  }
+
+  @Test
+  public void find_returnsMemberWithSameId_secondMember() {
+    Member firstMember = new Member("james");
+    Member secondMember = new Member("jack:");
+    assertEquals(Member.find(secondMember.getId()), secondMember);
+  }
 }
