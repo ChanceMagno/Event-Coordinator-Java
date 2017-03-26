@@ -49,10 +49,12 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/members", (request, response) -> {
+    post("/teams/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Team team = Team.find(Integer.parseInt(request.queryParams("teamId")));
-      String memberName = request.queryParams("memberName");
+      String membersName = request.queryParams("memberName");
+      Member newMember = new Member(membersName);
+      team.addMember(newMember);
       model.put("team", team);
       model.put("template", "templates/teams.vtl");
       return new ModelAndView(model, layout);

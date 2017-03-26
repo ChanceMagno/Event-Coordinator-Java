@@ -5,7 +5,7 @@ public class Team {
   private String mTeamName;
   private static List<Team> teams = new ArrayList<Team>();
   private int mId;
-  private List<Member> mName;
+  private ArrayList<Member> mName;
 
   public Team(String teamName) {
     mTeamName = teamName;
